@@ -1,4 +1,3 @@
-// A. Counterexample
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -19,19 +18,16 @@ using pii = pair<int, int>;
 void solve() {
     
     ll n, m;
-    cin >> n >> m;
+    cin >> n>> m;
+
+    if(n%2 != 0) n++;
+    if(abs(n-m) < 2) cout << -1;
+    else{
+        cout << n << " " << n+1 << " " << n+2;
+    }
     
-    ll a=n;
-    ll b=n+1;
+    // Main logic goes here
     
-    
-    for(ll c= n+2; c <= m; c++){
-        if (__gcd(b, c) == 1 && __gcd(a, c) > 1) {
-            cout << a << " " << b << " " << c << endl;
-            return;
-        }
-    } 
-    cout << -1 << endl;
 }
 
 
@@ -39,6 +35,12 @@ int main() {
     
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
+
+    //int t;
+    //cin >> t;
+    //while (t--) {
+    //    solve();
+    //}
     
     solve();
 
