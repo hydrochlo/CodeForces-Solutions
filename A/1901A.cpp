@@ -20,7 +20,7 @@ void solve() {
     cin >> n >> x;
     vll points_arr;
     points_arr.pb(0);
-    
+
     // Main logic goes here
     for(int i=0; i<n; i++){
         ll point;
@@ -32,17 +32,15 @@ void solve() {
 
     ll max_distance_between_points = INT_MIN;
 
-    for(int j=0; j<n; j++){
+    for(int j=1; j<n; j++){
         if(j == n-1){
             max_distance_between_points = max(max_distance_between_points, 2 * (points_arr[j] - points_arr[j-1]));
         } else {
-            max_distance_between_points = max(max_distance_between_points, 2 * (points_arr[j] - points_arr[j-1]));
+            max_distance_between_points = max(max_distance_between_points, (points_arr[j] - points_arr[j-1]));
         }
     }
 
     cout << max_distance_between_points << endl;
-    
-    
 }
 
 int main() {
