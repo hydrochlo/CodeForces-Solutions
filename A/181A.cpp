@@ -20,16 +20,50 @@ void solve() {
     
     int n, m; cin >> n >> m;
 
-    vvs a(n, vs(m));
+    vs a(n);
+
+    for(int i=0; i<n; i++){
+        cin >> a[i];
+    }
+
+    vi rows, cols;
 
     for(int i=0; i<n; i++){
         for(int j=0; j<m; j++){
-            cin >> a[i][j];
+            if(a[i][j] == '*'){
+                rows.push_back(i+1);
+                cols.push_back(j+1);
+            }
         }
     }
 
-    
-
+    for(int i=0; i<3; i++){
+        
+        if(rows[0] != rows[1] && rows[1] == rows[2]){
+            if(cols[0] == cols[2]){
+                cout << rows[0]<< " " << cols[1] << endl;
+                break;
+            }
+            if(cols[0] == cols[1]){
+                cout << rows[0] << " " << cols[2] << endl;
+                break;
+            }
+            
+        } else if(rows[0] == rows[1] && rows[1] != rows[2]){
+            if(cols[0] == cols[1]){
+                cout << rows[2] << " " << cols[0] << endl;
+                break;
+            }
+            if(cols[0] == cols[2]){
+                cout << rows[2] << " " << cols[1] << endl;
+                break;
+            }
+            if(cols[1] == cols[2]){
+                cout << rows[2] << " " << cols[0] << endl;
+                break;
+            }
+        }
+    }
 }
 
 int main() {
