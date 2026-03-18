@@ -17,35 +17,22 @@ using vll = vector<ll>;
 #define endl '\n'
 
 
-
 void solve() {
-    
-    ll n, max_value, max_index;
-    cin >> n;
-    
-    // Main logic goes here
-    vi nums(n);
+    ll n, op, curr; cin >> n;
+    vi v(n);
     for(int i=0; i<n; i++){
-        cin >> nums[i];
+        cin >> v[i];
     }
 
-    max_value = nums[0];
-    max_index = 0;
-
-    for(int i=1; i<n; i++){
-        if(nums[i] >= max_value){
-            max_value = nums[i];
-            max_index = i+1;
+    op = 0; curr = 0;
+    for(int i=0; i<n; i++){
+        if(v[i] >= curr){
+            op++;
+            curr = v[i];
         }
     }
 
-    if(max_index == 1 || max_index == 0) cout << 1 << endl;
-    else if(max_index == n) cout << n << endl;
-    else {
-        while (nums.size()  != 0){
-
-        }
-    }
+    cout << op << endl;
 
 }
 
@@ -54,13 +41,11 @@ int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    //int t;
-    //cin >> t;
-    //while (t--) {
-    //    solve();
-    //}
-    
-    solve();
+    int t;
+    cin >> t;
+    while (t--) {
+       solve();
+    }
 
     return 0;
 }
