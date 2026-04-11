@@ -18,10 +18,6 @@ using vpl = vector<pair<ll,ll>>;
 #define sz(x) (int)(x).size()
 #define fastio ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0)
 #define lll __int128
-#define loop(i,n) for(ll i=0;i<n;i++)
-#define loop2(i,n) for(ll i=1;i<=n;i++)
-#define input(a) for(auto &x:a) cin>>x
-#define output(a) for(auto x:a) cout<<x<<" ";cout<<endl
 #define endl '\n'
 #define no cout << "NO" << endl
 #define yes cout << "YES" << endl
@@ -35,9 +31,25 @@ void solve() {
     cin >> n;
 
     vi lol(n);
-    input(lol);
-    
-    
+    for(int i=0; i<n; i++) cin >> lol[i];
+
+    int answer = 0;
+    for(int i=0; i<n; i++){
+        int j = i , cnt = 1;
+        while(j>0 && lol[j]>=lol[j-1]){
+            cnt++;
+            j--;
+        }
+        j = i;
+        while(j<n-1 && lol[j]>=lol[j+1]){
+            cnt++;
+            j++;
+        }
+
+        answer = max(cnt, answer);
+    }
+
+    cout << answer << endl;
     
 }
 

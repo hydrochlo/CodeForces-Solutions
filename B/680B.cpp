@@ -18,10 +18,6 @@ using vpl = vector<pair<ll,ll>>;
 #define sz(x) (int)(x).size()
 #define fastio ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0)
 #define lll __int128
-#define loop(i,n) for(ll i=0;i<n;i++)
-#define loop2(i,n) for(ll i=1;i<=n;i++)
-#define input(a) for(auto &x:a) cin>>x
-#define output(a) for(auto x:a) cout<<x<<" ";cout<<endl
 #define endl '\n'
 #define no cout << "NO" << endl
 #define yes cout << "YES" << endl
