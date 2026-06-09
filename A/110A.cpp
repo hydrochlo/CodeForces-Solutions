@@ -1,0 +1,47 @@
+// A. Nearly Lucky Number 
+//link: https://codeforces.com/problemset/problem/110/A
+//author: https://codeforces.com/profile/iam-phoenix
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll = long long;
+using vi = vector<int>;
+using vvi = vector<vi>;
+using vs = vector<string>;
+using vl = vector<ll>;
+
+#define pb push_back
+#define all(x) (x).begin(), (x).end()
+#define allr(a) a.rbegin(), a.rend()
+#define sz(x) (int)(x).size()
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+#define endl '\n'
+
+
+void solve() {
+    
+    ll n;
+    cin >> n;
+    
+    // Main logic goes here
+    int cnt = 0;
+    // cout << "here" << endl;
+    while(n>0){
+        int d = n%10;
+        if(d==4 || d==7) cnt++;
+        n/=10;
+    }
+    if(cnt==4 || cnt==7) yes;
+    else no;
+}
+
+int main() {
+    
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    solve();
+
+    return 0;
+}
