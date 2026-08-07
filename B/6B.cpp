@@ -35,13 +35,13 @@ void solve() {
         cin >> s[i];
     }
 
-    for(int i=0; i<n; i++){
-        for(int j=0; j<m; j++){
-            if(s[i][j]==ch){
-                if((i+1)<=n && i-1>=0 && )
-            }
-        }
-    }
+    // for(int i=0; i<n; i++){
+    //     for(int j=0; j<m; j++){
+    //         if(s[i][j]==ch){
+    //             if((i+1)<=n && i-1>=0 && )
+    //         }
+    //     }
+    // }
 
 }
 
