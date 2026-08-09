@@ -1,5 +1,5 @@
-// A. The Best Card
-//link: https://codeforces.com/contest/2253/problem/A
+// A. Three Numbers on the Blackboard
+//link: https://codeforces.com/contest/2256/problem/A
 //author: https://codeforces.com/profile/_felu_
 #include <bits/stdc++.h>
 using namespace std;
@@ -18,21 +18,17 @@ using vl = vector<ll>;
 #define no cout << "NO" << endl
 #define endl '\n'
 
-bool isPrime(int x){
-    for(int i=2; i<=(x/2); i++){
-        if(x%i == 0) return false;
-    }
-    return true;
-}
 
 void solve() {
     
-    int n;
-    cin >> n;
-    
-    // cout << isPrime(n+1) << endl;
-    if(isPrime(n+1)) cout << "YES" << endl;
-    else cout << "NO" << endl;
+    vl a(3);
+    for(int i=0; i<3; i++) cin >> a[i];
+
+    sort(a.begin(), a.end());
+
+    if((a[0]+a[1])<a[2]) cout << a[1] << endl;
+    else cout << a[2] - a[0] << endl;
+
 }
 
 int main() {
@@ -45,6 +41,6 @@ int main() {
     while (t--) {
        solve();
     }
-
+    
     return 0;
 }
